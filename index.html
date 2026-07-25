@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elton Garcia — Desenvolvedor Full Stack</title>
+<meta name="description" content="Portfólio de Elton Garcia, desenvolvedor full stack. Sites para negócios, e-commerce, landing pages e mais.">
+<style>
+  :root{
+    --bg:#0b0d12;
+    --bg-alt:#12151d;
+    --card:#161a24;
+    --border:#242938;
+    --text:#e9ecf3;
+    --muted:#9aa3b8;
+    --accent:#6ee7b7;
+    --accent2:#7c9bff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(10px);
+    background:rgba(11,13,18,0.75);
+    border-bottom:1px solid var(--border);
+  }
+  nav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px}
+  .logo{font-weight:700;font-size:1.1rem;letter-spacing:.5px}
+  .logo span{color:var(--accent)}
+  .navlinks{display:flex;gap:24px;font-size:.95rem;color:var(--muted)}
+  .navlinks a:hover{color:var(--text)}
+
+  .hero{
+    padding:120px 24px 90px;
+    text-align:center;
+    background:radial-gradient(circle at 50% 0%, rgba(124,155,255,0.12), transparent 60%);
+  }
+  .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;letter-spacing:-1px}
+  .hero h1 .accent{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{margin-top:18px;color:var(--muted);font-size:1.15rem;max-width:640px;margin-left:auto;margin-right:auto}
+  .cta-row{margin-top:34px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    padding:12px 26px;border-radius:8px;font-weight:600;font-size:.95rem;
+    border:1px solid var(--border);transition:.2s;
+  }
+  .btn-primary{background:var(--accent);color:#08110c}
+  .btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--text)}
+  .btn-ghost:hover{background:var(--bg-alt);transform:translateY(-1px)}
+
+  section{padding:70px 24px}
+  .section-title{font-size:1.8rem;font-weight:700;margin-bottom:8px}
+  .section-sub{color:var(--muted);margin-bottom:40px;max-width:600px}
+
+  .about-grid{display:grid;grid-template-columns:1fr;gap:20px}
+  .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .skill{background:var(--card);border:1px solid var(--border);padding:8px 16px;border-radius:999px;font-size:.85rem;color:var(--muted)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:14px;
+    padding:24px;transition:.25s;display:flex;flex-direction:column;gap:12px;
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--accent2);box-shadow:0 10px 30px rgba(0,0,0,0.35)}
+  .card .tag{display:inline-block;font-size:.7rem;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);font-weight:700}
+  .card h3{font-size:1.15rem}
+  .card p{color:var(--muted);font-size:.9rem;flex:1}
+  .card .links{display:flex;gap:14px;font-size:.85rem;margin-top:6px}
+  .card .links a{color:var(--accent2)}
+  .card .links a:hover{text-decoration:underline}
+  .featured{border-color:var(--accent)}
+
+  footer{
+    border-top:1px solid var(--border);
+    padding:50px 24px;text-align:center;color:var(--muted);
+  }
+  .contact-row{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:20px;font-size:1rem}
+  .contact-row a{color:var(--text);display:flex;align-items:center;gap:8px}
+  .contact-row a:hover{color:var(--accent)}
+  .foot-note{margin-top:34px;font-size:.8rem;color:#555c70}
+
+  @media(min-width:720px){
+    .about-grid{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Elton<span>Garcia</span></div>
+    <div class="navlinks">
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Elton Garcia<br><span class="accent">Desenvolvedor Full Stack</span></h1>
+  <p>Crio sites, sistemas e ferramentas sob medida — do front ao back, do zero à publicação. Já entreguei sites para motos, lojas, barbearias, imobiliárias e mais.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+    <a class="btn btn-ghost" href="#contato">Falar comigo</a>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap about-grid">
+    <div>
+      <div class="section-title">Sobre mim</div>
+      <p style="color:var(--muted)">Desenvolvedor full stack com foco em criar sites e sistemas rápidos, funcionais e que geram resultado de verdade para negócios locais e projetos próprios. Trabalho do planejamento ao deploy: front-end, back-end, integração e publicação.</p>
+    </div>
+    <div>
+      <div class="section-title" style="font-size:1.2rem">Stack &amp; habilidades</div>
+      <div class="skills">
+        <span class="skill">HTML / CSS / JS</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">Git &amp; GitHub</span>
+        <span class="skill">Deploy em VPS</span>
+        <span class="skill">GitHub Pages</span>
+        <span class="skill">Integração de APIs</span>
+        <span class="skill">Sites para clientes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="section-title">Projetos</div>
+    <div class="section-sub">Uma seleção de sites e sistemas que desenvolvi, do conceito à publicação.</div>
+    <div class="grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap">
+    <div class="section-title">Vamos conversar?</div>
+    <p style="color:var(--muted)">Disponível para novos projetos e parcerias.</p>
+    <div class="contact-row">
+      <a href="https://wa.me/5575991748725" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:eltonng645@gmail.com">Email</a>
+      <a href="https://github.com/EltongarciaTI" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://instagram.com/eltongarcia100" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="foot-note">© <span id="year"></span> Elton Garcia. Feito com HTML, CSS e café.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const projects = [
+  {
+    name: "Danilo Motos",
+    desc: "Site oficial em produção para loja de motos, com catálogo e contato direto.",
+    tag: "Em produção",
+    live: "https://danilomotos.com",
+    repo: "https://github.com/EltongarciaTI/danilomotos.com",
+    featured: true
+  },
+  {
+    name: "VN Palpites",
+    desc: "Site de palpites esportivos para o influenciador @vinny_oliverr, publicado via GitHub Pages.",
+    tag: "Publicado",
+    repo: "https://github.com/EltongarciaTI/vnpalpites",
+    live: "https://eltongarciati.github.io/vnpalpites",
+    featured: true
+  },
+  {
+    name: "Site Belo Móveis",
+    desc: "Site institucional para loja de móveis.",
+    tag: "Cliente",
+    repo: "https://github.com/EltongarciaTI/sitebelomoveis"
+  },
+  {
+    name: "Loja de Celular",
+    desc: "Site de vendas para loja de celulares e acessórios.",
+    tag: "Cliente",
+    repo: "https://github.com/EltongarciaTI/LOJADECELULAR"
+  },
+  {
+    name: "Loja de Roupas",
+    desc: "Site de vendas para loja de roupas, com vitrine de produtos.",
+    tag: "Cliente",
+    repo: "https://github.com/EltongarciaTI/lojaderoupa"
+  },
+  {
+    name: "Catálogo de Carros",
+    desc: "Catálogo online de veículos com listagem e detalhes.",
+    tag: "Cliente",
+    repo: "https://github.com/EltongarciaTI/catalogos-de-carros"
+  },
+  {
+    name: "Barbearia Gilson",
+    desc: "Site institucional para barbearia, com serviços e contato.",
+    tag: "Cliente",
+    repo: "https://github.com/EltongarciaTI/barberiagilson"
+  },
+  {
+    name: "Site Agenda",
+    desc: "Sistema de agendamento para serviços.",
+    tag: "Sistema",
+    repo: "https://github.com/EltongarciaTI/SITEAGENDA"
+  },
+  {
+    name: "Afiliados Bet",
+    desc: "Página de afiliados para apostas esportivas.",
+    tag: "Landing page",
+    repo: "https://github.com/EltongarciaTI/afiliados-bet1.0"
+  },
+  {
+    name: "Dashboard",
+    desc: "Painel de controle com JavaScript para visualização de dados.",
+    tag: "Sistema",
+    repo: "https://github.com/EltongarciaTI/dashbarg"
+  },
+  {
+    name: "Site Juninho",
+    desc: "Site institucional personalizado sob demanda.",
+    tag: "Cliente",
+    repo: "https://github.com/EltongarciaTI/juninho"
+  },
+  {
+    name: "Entrega Site Adílio",
+    desc: "Site entregue sob demanda para cliente.",
+    tag: "Cliente",
+    repo: "https://github.com/EltongarciaTI/entregasiteadilio"
+  }
+];
+
+const grid = document.getElementById('projects-grid');
+grid.innerHTML = projects.map(p => `
+  <div class="card ${p.featured ? 'featured' : ''}">
+    <span class="tag">${p.tag}</span>
+    <h3>${p.name}</h3>
+    <p>${p.desc}</p>
+    <div class="links">
+      ${p.live ? `<a href="${p.live}" target="_blank" rel="noopener">Ver site →</a>` : ''}
+      <a href="${p.repo}" target="_blank" rel="noopener">Código →</a>
+    </div>
+  </div>
+`).join('');
+</script>
+
+</body>
+</html>
