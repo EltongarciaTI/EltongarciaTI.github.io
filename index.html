@@ -217,9 +217,29 @@ const projects = [
   },
   {
     name: "Afiliados Bet",
-    desc: "Página de afiliados para apostas esportivas.",
-    tag: "Landing page",
-    repo: "https://github.com/EltongarciaTI/afiliados-bet1.0"
+    desc: "Página de afiliados para apostas esportivas, em produção.",
+    tag: "Em produção",
+    live: "https://afiliadosbet.org",
+    repo: "https://github.com/EltongarciaTI/afiliados-bet1.0",
+    featured: true
+  },
+  {
+    name: "Adílio Pizza",
+    desc: "Site em produção para pizzaria. O código de produção roda em VPS privada; o repositório público é uma versão de demonstração.",
+    tag: "Em produção",
+    live: "https://adiliopizza.com",
+    repo: "https://github.com/EltongarciaTI/entregasiteadilio",
+    featured: true
+  },
+  {
+    name: "Sistema de Gestão Escolar",
+    desc: "Sistema completo de gestão escolar desenvolvido em Python com Streamlit para uma escola: cadastro, controle e relatórios.",
+    tag: "Privado"
+  },
+  {
+    name: "Servidor Proxy / Compartilhamento de Wi-Fi",
+    desc: "PoC de um PC rodando Linux Debian como servidor proxy, distribuindo internet Wi-Fi para 4 computadores em rede.",
+    tag: "Privado"
   },
   {
     name: "Dashboard",
@@ -232,12 +252,6 @@ const projects = [
     desc: "Site institucional personalizado sob demanda.",
     tag: "Cliente",
     repo: "https://github.com/EltongarciaTI/juninho"
-  },
-  {
-    name: "Entrega Site Adílio",
-    desc: "Site entregue sob demanda para cliente.",
-    tag: "Cliente",
-    repo: "https://github.com/EltongarciaTI/entregasiteadilio"
   }
 ];
 
@@ -249,7 +263,7 @@ grid.innerHTML = projects.map(p => `
     <p>${p.desc}</p>
     <div class="links">
       ${p.live ? `<a href="${p.live}" target="_blank" rel="noopener">Ver site →</a>` : ''}
-      <a href="${p.repo}" target="_blank" rel="noopener">Código →</a>
+      ${p.repo ? `<a href="${p.repo}" target="_blank" rel="noopener">Código →</a>` : ''}
     </div>
   </div>
 `).join('');
