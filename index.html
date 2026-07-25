@@ -219,37 +219,37 @@ const studyProjects = [
     name: "Site Belo Móveis",
     desc: "Site institucional de estudo para loja de móveis.",
     tag: "Exemplo",
-    repo: "https://github.com/EltongarciaTI/sitebelomoveis"
+    live: "https://eltongarciati.github.io/sitebelomoveis/"
   },
   {
     name: "Loja de Celular",
     desc: "Site de estudo para loja de celulares e acessórios.",
     tag: "Exemplo",
-    repo: "https://github.com/EltongarciaTI/LOJADECELULAR"
+    live: "https://eltongarciati.github.io/LOJADECELULAR/"
   },
   {
     name: "Loja de Roupas",
     desc: "Site de estudo para loja de roupas, com vitrine de produtos.",
     tag: "Exemplo",
-    repo: "https://github.com/EltongarciaTI/lojaderoupa"
+    live: "https://eltongarciati.github.io/lojaderoupa/"
   },
   {
     name: "Catálogo de Carros",
     desc: "Catálogo online de veículos, projeto de estudo.",
     tag: "Exemplo",
-    repo: "https://github.com/EltongarciaTI/catalogos-de-carros"
+    live: "https://eltongarciati.github.io/catalogos-de-carros/"
   },
   {
     name: "Barbearia Gilson",
     desc: "Exemplo de site com agenda para barbearia.",
     tag: "Exemplo",
-    repo: "https://github.com/EltongarciaTI/barberiagilson"
+    live: "https://eltongarciati.github.io/barberiagilson/"
   },
   {
     name: "Site Agenda",
     desc: "Sistema de agendamento de estudo.",
     tag: "Exemplo",
-    repo: "https://github.com/EltongarciaTI/SITEAGENDA"
+    live: "https://eltongarciati.github.io/SITEAGENDA/"
   },
   {
     name: "Servidor Proxy / Compartilhamento de Wi-Fi",
@@ -260,32 +260,32 @@ const studyProjects = [
     name: "Dashboard",
     desc: "Painel de controle de estudo com JavaScript para visualização de dados.",
     tag: "Exemplo",
-    repo: "https://github.com/EltongarciaTI/dashbarg"
+    live: "https://eltongarciati.github.io/dashbarg/"
   },
   {
     name: "Site Juninho",
     desc: "Exemplo de site para loja de roupas.",
     tag: "Exemplo",
-    repo: "https://github.com/EltongarciaTI/juninho"
+    live: "https://eltongarciati.github.io/juninho/"
   }
 ];
 
-function renderCard(p) {
+function renderCard(p, liveLabel) {
   return `
   <div class="card ${p.featured ? 'featured' : ''}">
     <span class="tag">${p.tag}</span>
     <h3>${p.name}</h3>
     <p>${p.desc}</p>
     <div class="links">
-      ${p.live ? `<a href="${p.live}" target="_blank" rel="noopener">Ver site →</a>` : ''}
+      ${p.live ? `<a href="${p.live}" target="_blank" rel="noopener">${liveLabel} →</a>` : ''}
       ${p.repo ? `<a href="${p.repo}" target="_blank" rel="noopener">Código →</a>` : ''}
     </div>
   </div>
 `;
 }
 
-document.getElementById('projects-grid').innerHTML = projects.map(renderCard).join('');
-document.getElementById('study-grid').innerHTML = studyProjects.map(renderCard).join('');
+document.getElementById('projects-grid').innerHTML = projects.map(p => renderCard(p, 'Ver site')).join('');
+document.getElementById('study-grid').innerHTML = studyProjects.map(p => renderCard(p, 'Ver exemplo')).join('');
 </script>
 
 </body>
