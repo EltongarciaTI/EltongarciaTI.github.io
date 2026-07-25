@@ -139,9 +139,17 @@
 
 <section id="projetos">
   <div class="wrap">
-    <div class="section-title">Projetos</div>
-    <div class="section-sub">Uma seleção de sites e sistemas que desenvolvi, do conceito à publicação.</div>
+    <div class="section-title">Projetos reais</div>
+    <div class="section-sub">Sites e sistemas em produção, entregues para clientes reais.</div>
     <div class="grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<section id="estudos">
+  <div class="wrap">
+    <div class="section-title">Projetos de estudo</div>
+    <div class="section-sub">Projetos de prática e aprendizado — não são entregas reais para cliente, servem para mostrar variedade técnica.</div>
+    <div class="grid" id="study-grid"></div>
   </div>
 </section>
 
@@ -172,50 +180,6 @@ const projects = [
     featured: true
   },
   {
-    name: "VN Palpites",
-    desc: "Site de palpites esportivos para o influenciador @vinny_oliverr, publicado via GitHub Pages.",
-    tag: "Publicado",
-    repo: "https://github.com/EltongarciaTI/vnpalpites",
-    live: "https://eltongarciati.github.io/vnpalpites",
-    featured: true
-  },
-  {
-    name: "Site Belo Móveis",
-    desc: "Site institucional para loja de móveis.",
-    tag: "Cliente",
-    repo: "https://github.com/EltongarciaTI/sitebelomoveis"
-  },
-  {
-    name: "Loja de Celular",
-    desc: "Site de vendas para loja de celulares e acessórios.",
-    tag: "Cliente",
-    repo: "https://github.com/EltongarciaTI/LOJADECELULAR"
-  },
-  {
-    name: "Loja de Roupas",
-    desc: "Site de vendas para loja de roupas, com vitrine de produtos.",
-    tag: "Cliente",
-    repo: "https://github.com/EltongarciaTI/lojaderoupa"
-  },
-  {
-    name: "Catálogo de Carros",
-    desc: "Catálogo online de veículos com listagem e detalhes.",
-    tag: "Cliente",
-    repo: "https://github.com/EltongarciaTI/catalogos-de-carros"
-  },
-  {
-    name: "Barbearia Gilson",
-    desc: "Site institucional para barbearia, com serviços e contato.",
-    tag: "Cliente",
-    repo: "https://github.com/EltongarciaTI/barberiagilson"
-  },
-  {
-    name: "Site Agenda",
-    desc: "Sistema de agendamento para serviços.",
-    tag: "Sistema",
-    repo: "https://github.com/EltongarciaTI/SITEAGENDA"
-  },
-  {
     name: "Afiliados Bet",
     desc: "Página de afiliados para apostas esportivas, em produção.",
     tag: "Em produção",
@@ -234,29 +198,77 @@ const projects = [
   {
     name: "Sistema de Gestão Escolar",
     desc: "Sistema completo de gestão escolar desenvolvido em Python com Streamlit para uma escola: cadastro, controle e relatórios.",
-    tag: "Privado"
+    tag: "Privado",
+    featured: true
+  },
+  {
+    name: "VN Palpites",
+    desc: "Site de palpites esportivos para o influenciador @vinny_oliverr, publicado via GitHub Pages.",
+    tag: "Publicado",
+    repo: "https://github.com/EltongarciaTI/vnpalpites",
+    live: "https://eltongarciati.github.io/vnpalpites",
+    featured: true
+  }
+];
+
+const studyProjects = [
+  {
+    name: "Site Belo Móveis",
+    desc: "Site institucional de estudo para loja de móveis.",
+    tag: "Estudo",
+    repo: "https://github.com/EltongarciaTI/sitebelomoveis"
+  },
+  {
+    name: "Loja de Celular",
+    desc: "Site de estudo para loja de celulares e acessórios.",
+    tag: "Estudo",
+    repo: "https://github.com/EltongarciaTI/LOJADECELULAR"
+  },
+  {
+    name: "Loja de Roupas",
+    desc: "Site de estudo para loja de roupas, com vitrine de produtos.",
+    tag: "Estudo",
+    repo: "https://github.com/EltongarciaTI/lojaderoupa"
+  },
+  {
+    name: "Catálogo de Carros",
+    desc: "Catálogo online de veículos, projeto de estudo.",
+    tag: "Estudo",
+    repo: "https://github.com/EltongarciaTI/catalogos-de-carros"
+  },
+  {
+    name: "Barbearia Gilson",
+    desc: "Site institucional de estudo para barbearia.",
+    tag: "Estudo",
+    repo: "https://github.com/EltongarciaTI/barberiagilson"
+  },
+  {
+    name: "Site Agenda",
+    desc: "Sistema de agendamento de estudo.",
+    tag: "Estudo",
+    repo: "https://github.com/EltongarciaTI/SITEAGENDA"
   },
   {
     name: "Servidor Proxy / Compartilhamento de Wi-Fi",
-    desc: "PoC de um PC rodando Linux Debian como servidor proxy, distribuindo internet Wi-Fi para 4 computadores em rede.",
-    tag: "Privado"
+    desc: "PoC de estudo: um PC rodando Linux Debian como servidor proxy, distribuindo internet Wi-Fi para 4 computadores em rede.",
+    tag: "Estudo (privado)"
   },
   {
     name: "Dashboard",
-    desc: "Painel de controle com JavaScript para visualização de dados.",
-    tag: "Sistema",
+    desc: "Painel de controle de estudo com JavaScript para visualização de dados.",
+    tag: "Estudo",
     repo: "https://github.com/EltongarciaTI/dashbarg"
   },
   {
     name: "Site Juninho",
-    desc: "Site institucional personalizado sob demanda.",
-    tag: "Cliente",
+    desc: "Site institucional de estudo.",
+    tag: "Estudo",
     repo: "https://github.com/EltongarciaTI/juninho"
   }
 ];
 
-const grid = document.getElementById('projects-grid');
-grid.innerHTML = projects.map(p => `
+function renderCard(p) {
+  return `
   <div class="card ${p.featured ? 'featured' : ''}">
     <span class="tag">${p.tag}</span>
     <h3>${p.name}</h3>
@@ -266,7 +278,11 @@ grid.innerHTML = projects.map(p => `
       ${p.repo ? `<a href="${p.repo}" target="_blank" rel="noopener">Código →</a>` : ''}
     </div>
   </div>
-`).join('');
+`;
+}
+
+document.getElementById('projects-grid').innerHTML = projects.map(renderCard).join('');
+document.getElementById('study-grid').innerHTML = studyProjects.map(renderCard).join('');
 </script>
 
 </body>
