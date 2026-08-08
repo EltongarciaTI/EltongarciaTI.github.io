@@ -63,6 +63,12 @@
   .section-sub{color:var(--muted);margin-bottom:40px;max-width:600px}
 
   .about-grid{display:grid;grid-template-columns:1fr;gap:20px}
+  .curriculum{margin-top:18px;border:1px solid var(--border);border-radius:10px;padding:14px 18px;background:var(--card)}
+  .curriculum summary{cursor:pointer;font-weight:600;color:var(--accent2);list-style:none}
+  .curriculum summary::-webkit-details-marker{display:none}
+  .curriculum summary::before{content:"▸ ";display:inline-block;transition:.2s}
+  .curriculum[open] summary::before{transform:rotate(90deg)}
+  .curriculum ul{margin:14px 0 4px;padding-left:20px;color:var(--muted);font-size:.9rem;line-height:1.9}
   .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
   .skill{background:var(--card);border:1px solid var(--border);padding:8px 16px;border-radius:999px;font-size:.85rem;color:var(--muted)}
 
@@ -122,6 +128,32 @@
       <div class="section-title">Sobre mim</div>
       <p style="color:var(--muted)">Desenvolvedor full stack com foco em criar sites e sistemas rápidos, funcionais e que geram resultado de verdade para negócios locais e projetos próprios. Trabalho do planejamento ao deploy: front-end, back-end, integração e publicação.</p>
       <p style="color:var(--muted);margin-top:14px">Formado como Técnico em Informática Avançado pelo Instituto Federal de Educação, Ciência e Tecnologia da Bahia (IFBA) — Campus Euclides da Cunha.</p>
+      <details class="curriculum">
+        <summary>Ver grade curricular do curso técnico</summary>
+        <ul>
+          <li>Arquitetura de Computadores Subsequente</li>
+          <li>Banco de Dados</li>
+          <li>Desenho Técnico</li>
+          <li>Estrutura de Dados</li>
+          <li>Linguagem I – OO com Java</li>
+          <li>Sistemas Operacionais</li>
+          <li>Análise e Modelagem de Dados</li>
+          <li>Desenvolvimento Web I</li>
+          <li>Eletrônica Digital Básica</li>
+          <li>Linguagem II – C#</li>
+          <li>Rede de Computadores I</li>
+          <li>Desenvolvimento Web II</li>
+          <li>Empreendedorismo</li>
+          <li>Gestão de Organizações</li>
+          <li>Organização, Normas e Qualidade</li>
+          <li>Projeto Integrador</li>
+          <li>Rede de Computadores II</li>
+          <li>Segurança, Meio Ambiente e Saúde Sub. Informática</li>
+          <li>Física Aplicada</li>
+          <li>Inglês Técnico</li>
+          <li>Produção Textual e Normas Técnicas</li>
+        </ul>
+      </details>
     </div>
     <div>
       <div class="section-title" style="font-size:1.2rem">Stack &amp; habilidades</div>
